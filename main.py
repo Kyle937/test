@@ -14,8 +14,8 @@ part2 = 0
 part3 = 0
 result = 0
 questions = 0
-no = ["n", "no", "f", "wrong"]
-yes = ["y", "yes", "t", "correct", part3]
+no = ["n", "no", "f", "wrong", "w", "0"]
+yes = ["y", "yes", "t", "correct", "c", "1"]
 # functions
 def question(answer, said):
     if said in yes:
@@ -83,6 +83,15 @@ if questions != 0:
             part2 = random.randint(random.randint(1,5),random.randint(10,50))
             part3 = part1-part2
             print(part1,"-",part2,"=",part3)
+            correct = "True"
+
+        # true multiply
+        elif randQuestion == 5:
+            print("what will the result of this be")
+            part1 = random.randint(random.randint(1,5),random.randint(10,50))
+            part2 = random.randint(random.randint(1,5),random.randint(10,50))
+            part3 = part1*part2
+            print(part1,"*",part2,"=",part3)
             correct = "True"
     
         if question(correct.lower().strip(), input().lower().strip()):
